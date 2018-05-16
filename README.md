@@ -1,8 +1,9 @@
 # mobx-event-bus
 
 Tiny library allows publish-subscribe-style communication between components without requiring the components to explicitly register with one another.
+Based on original implementation by 7upcat, this fork includes Typescript bindings. Additional enhancements are planned in the future.
 
-## Installation 
+## Installation
 
 `npm install mobx-event-bus --save`
 
@@ -34,10 +35,10 @@ class DemoStore {
 
 export const demoStore = new DemoStore()
 
-// post event with topic 'topic1' and payload 'Tommy' 
+// post event with topic 'topic1' and payload 'Tommy'
 eventBus.post('topic1', 'Tommy')
 
-// post event with topic 'topic1' and payload 'Martin' 
+// post event with topic 'topic1' and payload 'Martin'
 eventBus.post('topic1', 'Martin')
 
 ```
@@ -56,7 +57,7 @@ export default class RouterStore {
       eventBus.post('router', { ...location})
     })
   }
-   
+
   history = createBrowserHistory()
 }
 ```
@@ -70,7 +71,7 @@ export default class DomainStore {
   constructor () {
     eventBus.register(this)
   }
-  
+
   @subscribe('router', {payload}=> payload.pathname === '/')
   setup( event ) {
     // init data

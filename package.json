@@ -1,25 +1,36 @@
 {
-  "name": "mobx-event-bus",
-  "version": "0.1.0",
-  "description": "Tiny library make Mobx action response events.",
+  "name": "mobx-event-bus2",
+  "version": "1.0.0",
+  "description": "Event bus based on MobX pub/sub model.",
   "main": "lib/index.js",
+  "maintainers": [
+    {
+      "name": "Igor Savin",
+      "email": "kibertoad@gmail.com"
+    },
+    {
+      "name": "Povilas Jurjevas",
+      "email": "povilas.hart@gmail.com"
+    }
+  ],
   "files": [
     "lib"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/7upcat/mobx-event-bus.git"
+    "url": "https://github.com/kibertoad/mobx-event-bus.git"
   },
   "keywords": [
     "mobx",
-    "eventBus"
+    "eventBus",
+    "events"
   ],
   "author": "7upcat <7upcat@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/7upcat/mobx-event-bus/issues"
+    "url": "https://github.com/kibertoad/mobx-event-bus/issues"
   },
-  "homepage": "https://github.com/7upcat/mobx-event-bus#readme",
+  "homepage": "https://github.com/kibertoad/mobx-event-bus#readme",
   "dependencies": {
     "mobx": "^3.3.1"
   }
