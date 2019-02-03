@@ -1,4 +1,4 @@
-# mobx-event-bus
+# mobx-event-bus &middot; [![Build Status](https://travis-ci.org/7upcat/mobx-event-bus.svg?branch=master)](https://travis-ci.org/7upcat/mobx-event-bus)
 
 Tiny library allows publish-subscribe-style communication between components without requiring the components to explicitly register with one another.
 Based on original implementation by 7upcat, this fork includes Typescript bindings. Additional enhancements are planned in the future.
@@ -80,6 +80,34 @@ export default class DomainStore {
 ```
 ### Handle Keyboard Events
 
+#### React Component
+```javascript
+import eventBus from 'mobx-event-bus'
+// 
+export default ()=>{
+  const handleKeyPress = (event)=>{
+    eventBus.post('keyboard', event)
+  }
+  return <input type="text" id="one" onKeyPress={handleKeyPress} />
+}
+```
+
+#### `DomainStore.js`
+
+```javascript
+import { eventBus, subscribe } from 'mobx-event-bus'
+
+export default class DomainStore {
+  constructor () {
+    eventBus.register(this)
+  }
+  
+  @subscribe('keyboard', {payload}=> payload.key === 'Enter')
+  handleEnterPress( event ) {
+    // your business code.
+  }
+}
+```
 
 ## API Documents
 
