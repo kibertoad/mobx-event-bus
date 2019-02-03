@@ -1,15 +1,17 @@
-import {eventBus,subscribe} from '../lib'
+const {eventBus, subscribe} = require('../lib')
 
-export default class TestStore {
+class TestStore {
 
-  payload = undefined
+    payload = undefined
 
-  constructor () {
-    eventBus.register(this)
-  }
+    constructor() {
+        eventBus.register(this)
+    }
 
-  @subscribe('topic1')
-  lisener1 (event) {
-    this.payload = event.payload
-  }
+    @subscribe('topic1')
+    lisener1(event) {
+        this.payload = event.payload
+    }
 }
+
+module.exports = TestStore
