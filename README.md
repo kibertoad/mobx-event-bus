@@ -41,6 +41,9 @@ eventBus.post('topic1', 'Tommy')
 // post event with topic 'topic1' and payload 'Martin'
 eventBus.post('topic1', 'Martin')
 
+// unregister from receiving future events
+eventBus.unregister(demoStore);
+
 ```
 
 ### Integration with react-router
@@ -69,7 +72,9 @@ import { eventBus, subscribe } from 'mobx-event-bus'
 
 export default class DomainStore {
   constructor () {
-    eventBus.register(this)
+    eventBus.register(this, {
+      fireImmediately: false
+    })
   }
 
   @subscribe('router', {payload}=> payload.pathname === '/')
@@ -102,7 +107,7 @@ export default class DomainStore {
     eventBus.register(this)
   }
   
-  @subscribe('keyboard', {payload}=> payload.key === 'Enter')
+  @subscribe('keyboard', ({payload}) => payload.key === 'Enter')
   handleEnterPress( event ) {
     // your business code.
   }
@@ -119,11 +124,21 @@ Dispatch events to listeners, and provides ways for subscribers register themsel
 import { eventBus } from 'mobx-event-bus'
 ```
 
-#### register( store::Object )
+#### register(store, options?)
 
-Registers all subscribers methods on store instances to receive events.
+Registers all subscribers methods on store instances to receive events. 
+Accepts optional config with the following options:
 
-#### post( topic::String , payload::Any )
+## Options
+
+* `fireImmediately`: Boolean that indicates that the subscriber function should immediately 
+be triggered if event for that topic were fired before. `false` by default.
+
+#### unregister(store)
+
+Unregister store from receiving future events.
+
+#### post(topic , payload)
 
 Posts specified topic events to registered subscribers.
 
@@ -139,7 +154,11 @@ Posts specified topic events to registered subscribers.
 Mark a store class method as an event subscriber.
 
 Usage:
- - @subscribe (topic::String, selector:: Object->Boolean) classMethod () {}
-
+```
+    @subscribe (topic, selector)
+    handler() {
+    
+    }
+```
 
 

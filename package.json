@@ -1,6 +1,6 @@
 {
   "name": "mobx-event-bus2",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Event bus based on MobX pub/sub model.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kibertoad/mobx-event-bus.git"
+    "url": "https://github.com/deployed/mobx-event-bus.git"
   },
   "keywords": [
     "mobx",
@@ -29,19 +29,20 @@
   "author": "7upcat <7upcat@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kibertoad/mobx-event-bus/issues"
+    "url": "https://github.com/deployed/mobx-event-bus/issues"
   },
-  "homepage": "https://github.com/kibertoad/mobx-event-bus#readme",
+  "homepage": "https://github.com/deployed/mobx-event-bus#readme",
   "peerDependencies": {
-    "mobx": "^3.3.1 || ^4.0.0 || ^5.0.0"
+    "mobx": "^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
-    "babel-core": "7.0.0-beta.3",
-    "babel-jest": "^22.0.4",
-    "babel-plugin-transform-regenerator": "6.26.0",
-    "babel-preset-es2015": "7.0.0-beta.3",
-    "babel-preset-stage-1": "7.0.0-beta.3",
-    "jest": "^22.0.4"
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"
   },
   "jest": {
     "testURL": "http://localhost/",
