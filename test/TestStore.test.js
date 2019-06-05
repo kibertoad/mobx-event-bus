@@ -1,6 +1,13 @@
+const { configure } = require('mobx');
 const { eventBus } = require('../lib');
 const TestStore = require('./TestStore');
 const TOPIC = require('./topic');
+
+beforeEach(() => {
+    configure({
+        enforceActions: 'always'
+    });
+});
 
 describe('TestStore', () => {
     it('should work with single topic', () => {

@@ -1,9 +1,13 @@
+const { configure } = require('mobx');
 const { eventBus } = require('../lib');
 const TestStore = require('./TestStore');
 const TOPIC = require('./topic');
 
 beforeEach(() => {
     eventBus.metadata = {};
+    configure({
+        enforceActions: 'always'
+    });
 });
 
 describe('EventBus', () => {
