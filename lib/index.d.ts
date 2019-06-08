@@ -2,18 +2,35 @@
 /* Version 0.1.1 */
 /* Definitions by: Igor Savin https://github.com/kibertoad */
 
+declare interface ReactionOptions {
+    fireImmediately?: boolean;
+}
+
 declare interface EventBus {
     /**
-     *  @function
+     *  @field
      */
-    metadata(): object
+    metadata: {
+        [topic: string]: {
+            seq: number,
+            payload?: any
+        }
+    }
 
     /**
      * Registers subscriber to receive events
      * @function
      * @param {object} subscriber
+     * @param {ReactionOptions} options
      */
-    register(subscriber: object): void;
+    register(subscriber: object, options?: ReactionOptions): void;
+
+    /**
+     * Unregisters subscriber
+     * @function
+     * @param {object} subscriber
+     */
+    unregister(subscriber: object): void;
 
     /**
      * Post event with given topic and payload
