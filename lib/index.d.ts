@@ -8,7 +8,7 @@ declare interface ReactionOptions {
 
 declare interface EventBus {
     /**
-     *  metadata
+     *  @field
      */
     metadata: {
         [topic: string]: {

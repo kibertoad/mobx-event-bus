@@ -1,6 +1,6 @@
 {
   "name": "mobx-event-bus2",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Event bus based on MobX pub/sub model.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/deployed/mobx-event-bus.git"
+    "url": "https://github.com/kibertoad/mobx-event-bus.git"
   },
   "keywords": [
     "mobx",
@@ -29,9 +29,9 @@
   "author": "7upcat <7upcat@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/deployed/mobx-event-bus/issues"
+    "url": "https://github.com/kibertoad/mobx-event-bus/issues"
   },
-  "homepage": "https://github.com/deployed/mobx-event-bus#readme",
+  "homepage": "https://github.com/kibertoad/mobx-event-bus#readme",
   "peerDependencies": {
     "mobx": "^4.0.0 || ^5.0.0"
   },

@@ -5,7 +5,7 @@ Based on original implementation by 7upcat, this fork includes Typescript bindin
 
 ## Installation
 
-`npm install mobx-event-bus --save`
+`npm install mobx-event-bus2 --save`
 
 ## Usage
 
